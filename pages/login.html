@@ -1,0 +1,10 @@
+<center>
+<div style="background-color: blanchedalmond; display: inline-table;border-style: groove;">
+<i><h2>Diary</h2></i>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+</div>
+</center>
