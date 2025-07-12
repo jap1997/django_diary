@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>{{user.username}}'s Diary</title>
+    </head>
+
+
+    <body style="display: grid; place-items: center; min-height: 100vh; margin: 0;">
+		<div style="padding: 20px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
+        <form action='logout/' method="POST">
+			{% csrf_token %}
+            <input type="submit" value="Logout"/>
+        </form>
+        </div> 
+	
+        <a href="/list"><h2>Your diary pages</h2></a>
+
+
+        <a href="/create"><h2>Create a new page</h2></a>
+
+    </body>
+
+
+    </body>
+</html>
