@@ -11,3 +11,7 @@ def list_pages(request, pid=None):
         user_diary_pages = Page.objects.filter(author__username=request.user)
         return render(request, 'list.html', {'pages': user_diary_pages})
     return render(request, 'page.html')
+
+@login_required
+def create_page(request):
+    return render(request, 'create.html')

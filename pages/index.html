@@ -5,8 +5,8 @@
     </head>
 
 
-    <body style="display: grid; place-items: center; min-height: 100vh; margin: 0;">
-		<div style="padding: 20px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
+    <body style="display: grid; place-items: center; min-height: 70vh; margin: 0;">
+		<div style="padding: 0px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
         <form action='logout/' method="POST">
 			{% csrf_token %}
             <input type="submit" value="Logout"/>
