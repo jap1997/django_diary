@@ -7,8 +7,8 @@
 
     <body style="display: grid; place-items: center; min-height: 70vh; margin: 0;">
 		<div style="padding: 0px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
-            <a href="/"><input type="submit" value="Home"/></a>
-            <a href="/list"><input type="submit" value="All pages"/></a>
+            <a href="/"><input class="button" type="submit" value="Home"/></a>
+            <a href="/list"><input class="button" type="submit" value="Pages"/></a>
         </div>
         <form action="/create/" method="post">
 			{% csrf_token %}
@@ -17,7 +17,7 @@
         <input type="text" id="title" name="title" class="title-input" placeholder="Enter your title here...">
         <label for="content">Content:</label>
         <textarea id="content" name="content" class="content-textarea" placeholder="Write your content here..."></textarea>
-        <button type="submit">Create</button>
+        <button class="button" type="submit">Create</button>
         </form>
 
 
@@ -53,6 +53,14 @@
         border-radius: 4px;
         resize: vertical;   /* Allows user to resize vertically */
         box-sizing: border-box;
+    }
+    .button {
+        height: 40px;
+        width:60px;
+        margin: 5px;
+        background-color: bisque;
+        border-color: chocolate;
+        color: seagreen;
     }
     </style>
 </html>

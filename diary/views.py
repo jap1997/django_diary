@@ -10,7 +10,11 @@ def list_pages(request, pid=None):
     if pid is None:
         user_diary_pages = Page.objects.filter(author__username=request.user)
         return render(request, 'list.html', {'pages': user_diary_pages})
-    return render(request, 'page.html')
+    else:
+        pages = Page.objects.filter(id=pid)
+        if not pages.count():
+            return HttpResponse(status=404)
+        return render(request, 'page.html', { 'page': pages.first() })
 
 @login_required
 def create_page(request):

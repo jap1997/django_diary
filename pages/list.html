@@ -7,9 +7,15 @@
 
     <body style="display: grid; place-items: center; min-height: 70vh; margin: 0;">
 		<div style="padding: 0px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
-            <a href="/"><input type="submit" value="Home"/></a>
+            <a  href="/"><input class="button" type="submit" value="Home"/></a>
+            <a  href="/create/"><input class="button" type="submit" value="Create"/></a>
+
         </div> 
         <ul>
+        
+        {% if pages.count == 0 %}
+            <p><i>Currently your diary has no written pages. Use the create button to create a new page!</i></p>
+        {% endif %}
 		{% for p in pages %}
 
 		<li><a href="/list/{{p.id}}">{{ p.created|date:'Y/m/d' }}: {{p.title}}</li></a> <br /> <br />
@@ -20,6 +26,18 @@
     <style>
         li {
            font-size: 1.3em; 
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+        .button {
+            height: 40px;
+            width:60px;
+            margin: 5px;
+            background-color: bisque;
+            border-color: chocolate;
+            color: seagreen;
         }
     </style>
 </html>

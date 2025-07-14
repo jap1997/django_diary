@@ -4,7 +4,17 @@
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Login</button>
+  <button class="button" type="submit">Login</button>
 </form>
 </div>
 </center>
+<style>
+  .button {
+    height: 40px;
+    width:60px;
+    margin: 5px;
+    background-color: bisque;
+    border-color: chocolate;
+    color: seagreen;
+  }
+</style>

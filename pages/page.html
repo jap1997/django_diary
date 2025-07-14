@@ -7,16 +7,51 @@
 
     <body style="display: grid; place-items: center; min-height: 70vh; margin: 0;">
 		<div style="padding: 0px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
-            <a href="/list"><input type="submit" value="All pages"/></a>
-            <a href="/"><input type="submit" value="Home"/></a>
+            <a href="/list"><input class="button" type="submit" value="Pages"/></a>
+            <a href="/"><input class="button" type="submit" value="Home"/></a>
 
         </div> 
-	
-        Current page.. wip
+        <div class="page">
+            <h3>{{ page.title }}</h3>
+            <hr />
+            <p class="content">
+                {{ page.content }}
+            </p>
+            <br /> <br />
 
+
+            <p class="details">
+                Created on {{ page.created|date:'d/m/Y' }} at {{ page.created|date:'H:m' }}
+            </p>
+        </div>
 
     </body>
+    <style>
+    .button {
+        height: 40px;
+        width:60px;
+        margin: 5px;
+        background-color: bisque;
+        border-color: chocolate;
+        color: seagreen;
+    }
 
+    .page {
+        width: 80%;
+    }
 
-    </body>
+    h3 {
+        font-size: 1.7em;
+        color: #aaaa2a;
+    }
+
+    p {
+        font-size: 1.44em;
+        color: #010101;
+    }
+    .details {
+        font-size: 0.9em;
+        font-style: italic;
+    }
+    </style>
 </html>

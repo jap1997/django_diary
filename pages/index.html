@@ -9,7 +9,7 @@
 		<div style="padding: 0px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
         <form action='logout/' method="POST">
 			{% csrf_token %}
-            <input type="submit" value="Logout"/>
+            <input class="button" type="submit" value="Logout"/>
         </form>
         </div> 
 	
@@ -20,6 +20,14 @@
 
     </body>
 
-
-    </body>
+    <style>
+    .button {
+        height: 40px;
+        width:60px;
+        margin: 5px;
+        background-color: bisque;
+        border-color: chocolate;
+        color: seagreen;
+    }
+    </style>
 </html>
