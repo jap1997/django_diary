@@ -9,12 +9,17 @@
 		<div style="padding: 0px; text-align: center;"><h1 style="margin: 0;">{{user.username}}'s Diary</h1>
             <a href="/"><input type="submit" value="Home"/></a>
         </div> 
-	
-        <a href="/list"><h2>Your diary pages</h2></a>
+        <ul>
+		{% for p in pages %}
 
+		<li><a href="/list/{{p.id}}">{{ p.created|date:'Y/m/d' }}: {{p.title}}</li></a> <br /> <br />
 
+		{% endfor %}
+		</ul>
     </body>
-
-
-    </body>
+    <style>
+        li {
+           font-size: 1.3em; 
+        }
+    </style>
 </html>

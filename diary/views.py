@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, redirect
 from .models import Page
 @login_required
 def index(request):
@@ -14,4 +14,12 @@ def list_pages(request, pid=None):
 
 @login_required
 def create_page(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        if not title or not content:
+            return HttpResponse('Title and content missing', status=400)
+        else:
+            Page.objects.create(author=request.user, title = title, content = content)
+            return redirect('list')
     return render(request, 'create.html')
