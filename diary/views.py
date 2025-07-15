@@ -12,6 +12,7 @@ def list_pages(request, pid=None):
         return render(request, 'list.html', {'pages': user_diary_pages})
     else:
         pages = Page.objects.filter(id=pid)
+        # Flaw fix:  pages = Page.objects.filter(id=pid, author__username=request.user)
         if not pages.count():
             return HttpResponse(status=404)
         return render(request, 'page.html', { 'page': pages.first() })
